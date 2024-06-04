@@ -2,35 +2,69 @@
 	opacity: 1;
 }
 
-#home-svg-path {
-	fill: #000000;
-	stroke: black;
-	fill-opacity: 0;
-	stroke-width: 3;
-	stroke-dasharray: 8969;
-	stroke-dashoffset: 8969;
-	animation: drawSvg 4s linear forwards, fadeOut .4s linear forwards 4s;
-}
-
 #home-svg,
 #complete,
 #closed-mouth,
-#smile {
+#smile,
+.clipped {
 	max-width: 50vw;
 	max-height: 100vh;
 }
 
+.home-path {
+	clip-path: url(#clip);
+	fill: #000000;
+	stroke: black;
+	fill-opacity: 0;
+	stroke-width: 4;
+	animation: drawSvg 3s linear forwards, fadeOut .4s linear forwards 3s;
+}
+
+.home-path.board {
+	stroke-dasharray: 3149; /* predtym 8969 */
+	stroke-dashoffset: 3149; /* predtym 8969 */
+}
+
+.home-path.left-side {
+	stroke-dasharray: 3300; /* predtym 8969 */
+	stroke-dashoffset: 3300; /* predtym 8969 */
+}
+
+.home-path.head {
+	stroke-dasharray: 2967; /* predtym 8969 */
+	stroke-dashoffset: 2967; /* predtym 8969 */
+}
+
+.home-path.right-side {
+	stroke-dasharray: 960; /* predtym 8969 */
+	stroke-dashoffset: 960; /* predtym 8969 */
+}
+
+.home-path.left-eye {
+	stroke-width: 5;
+	stroke-dasharray: 323; /* predtym 8969 */
+	stroke-dashoffset: 323; /* predtym 8969 */
+	animation: drawSvg 1s linear forwards 2s, fadeOut .4s linear forwards 3s;
+}
+
+.home-path.right-eye {
+	stroke-width: 5;
+	stroke-dasharray: 278.5; /* predtym 8969 */
+	stroke-dashoffset: 278.5; /* predtym 8969 */
+	animation: drawSvg 1s linear forwards 2s, fadeOut .4s linear forwards 3s;
+}
+
 #complete {
 	opacity: 0;
-	animation: fadeIn .4s linear forwards 4s, breathe 2s linear infinite 4s;
+	animation: fadeIn .4s linear forwards 3s, breathe 2s linear infinite;
 }
 
 #closed-mouth {
-	animation: fadeInAndOut 2.5s linear forwards 4s, breathe 2s linear infinite;
+	animation: fadeInAndOut 2s linear forwards 3s, breathe 2s linear infinite;
 }
 
 #smile {
-	animation: fadeIn .1s linear forwards 6.5s, breathe 2s linear infinite;
+	animation: fadeIn .1s linear forwards 5s, breathe 2s linear infinite;
 }
 
 @keyframes breathe {
@@ -52,11 +86,8 @@
 }
 
 @keyframes drawSvg {
-	0% {
-		stroke-dashoffset: 11500; /* alebo 9500 */
-	}
 	100% {
-		stroke-dashoffset: 17938.5859375; /* alebo 0 */
+		stroke-dashoffset: 0; /* alebo 17938.5859375, 0 */
 	}
 }
 
