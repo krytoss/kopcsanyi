@@ -1,0 +1,94 @@
+#home-svg {
+	opacity: 1;
+}
+
+#home-svg-path {
+	fill: #000000;
+	stroke: black;
+	fill-opacity: 0;
+	stroke-width: 3;
+	stroke-dasharray: 8969;
+	stroke-dashoffset: 8969;
+	animation: drawSvg 4s linear forwards, fadeOut .4s linear forwards 4s;
+}
+
+#home-svg,
+#complete,
+#closed-mouth,
+#smile {
+	max-width: 50vw;
+	max-height: 100vh;
+}
+
+#complete {
+	opacity: 0;
+	animation: fadeIn .4s linear forwards 4s, breathe 2s linear infinite 4s;
+}
+
+#closed-mouth {
+	animation: fadeInAndOut 2.5s linear forwards 4s, breathe 2s linear infinite;
+}
+
+#smile {
+	animation: fadeIn .1s linear forwards 6.5s, breathe 2s linear infinite;
+}
+
+@keyframes breathe {
+	0% {
+		transform: translateX(-50%) translateY(0px) scale(1.0025)
+	}
+	25% {
+		transform: translateX(-50%) translateY(-2px)  scale(1.005)
+	}
+	50% {
+		transform: translateX(-50%) translateY(0px) scale(1.0025)
+	}
+	75% {
+		transform: translateX(-50%) translateY(2px) scale(1)
+	}
+	100% {
+		transform: translateX(-50%) translateY(0) scale(1.0025)
+	}
+}
+
+@keyframes drawSvg {
+	0% {
+		stroke-dashoffset: 11500; /* alebo 9500 */
+	}
+	100% {
+		stroke-dashoffset: 17938.5859375; /* alebo 0 */
+	}
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0
+	}
+	100% {
+		opacity: 1
+	}
+}
+
+@keyframes fadeOut {
+	0% {
+		opacity: 1
+	}
+	100% {
+		opacity: 0
+	}
+}
+
+@keyframes fadeInAndOut {
+	0% {
+		opacity: 0
+	}
+	40% {
+		opacity: 1
+	}
+	90% {
+		opacity: 1
+	}
+	100% {
+		opacity: 0
+	}
+}
