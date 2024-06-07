@@ -3,23 +3,21 @@ import mouth from "/img/home/closed_mouth.png"
 import smile from "/img/home/smile.png"
 import complete from "/img/home/complete.png"
 import './Home.css'
-import { useEffect } from "react"
 
 const Home = () => {
-
-	useEffect(() => {
-		const el = document.querySelector('path.board')
-		console.log(el.getTotalLength())
-		const el2 = document.querySelector('path.left-side')
-		console.log(el2.getTotalLength())
-		const el3 = document.querySelector('path.right-eye')
-		console.log(el3.getTotalLength())
-	})
 
 	const positionClasses = 'absolute left-1/2 -translate-x-1/2';
 
 	return (
 		<Section className='bg-green-300'>
+			<div className='header-title'>
+				<h1 className={ `${positionClasses} tracking-widest text-10xl text-black mt-3 font-black` }>
+					HELLO
+				</h1>
+				<h1 className={ `${positionClasses} tracking-widest text-10xl text-gray-700 font-black` }>
+					HELLO
+				</h1>
+			</div>
 			<svg
 				version="1.1"
 				id="home-svg"
