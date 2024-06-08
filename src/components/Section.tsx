@@ -8,9 +8,9 @@ type Props = {
 const Section = ({ className, children } : Props) => {
 
 	return (
-		<div className={ `section h-screen w-screen ${className}` }>
+		<section className={ `section h-screen w-screen snap-start ${className}` }>
 			{ children }
-		</div>
+		</section>
 	)
 
 }
