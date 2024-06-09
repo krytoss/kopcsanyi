@@ -15,10 +15,17 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --drawing_duration: 3s;
+  --show_smile: 5s;
+  --show_title: 4.5s;
+  --show_menu: 4.5s;
+  --show_menu_duration: 0.5s;
 }
 
 html {
   scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 
 a {

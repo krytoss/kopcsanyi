@@ -1,15 +1,18 @@
 import { ReactNode } from "react"
+import Menu from "./Menu"
 
 type Props = {
+	id?: string,
 	className?: string,
 	children: ReactNode
 }
 
-const Section = ({ className, children } : Props) => {
+const Section = ({ id, className, children } : Props) => {
 
 	return (
-		<section className={ `section h-screen w-screen snap-start ${className}` }>
+		<section id={id} className={ `section relative h-screen w-screen snap-start ${className}` }>
 			{ children }
+			<Menu />
 		</section>
 	)
 
