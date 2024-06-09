@@ -1,4 +1,4 @@
-import Section from "./Section"
+import Section from "../Section"
 import mouth from "/img/home/closed_mouth.png"
 import smile from "/img/home/smile.png"
 import complete from "/img/home/complete.png"
@@ -9,7 +9,7 @@ const Home = () => {
 	const positionClasses = 'absolute left-1/2 -translate-x-1/2';
 
 	return (
-		<Section className='bg-green-300'>
+		<Section id='home' className='bg-green-300'>
 			<div className='header-title'>
 				<h1 className={ `${positionClasses} tracking-widest text-10xl text-black mt-3 font-black` }>
 					HELLO

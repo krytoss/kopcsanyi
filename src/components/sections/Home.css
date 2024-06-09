@@ -1,3 +1,5 @@
+
+
 #home-svg {
 	opacity: 1;
 }
@@ -10,6 +12,7 @@
 	max-width: 50vw;
 	max-height: 70vh;
 	top: 10vh;
+	z-index: 10;
 }
 
 .home-path {
@@ -18,7 +21,8 @@
 	stroke: black;
 	fill-opacity: 0;
 	stroke-width: 4;
-	animation: drawSvg 3s linear forwards, fadeOut .4s linear forwards 3s;
+	animation: drawSvg var(--drawing_duration) linear forwards,
+				fadeOut .4s linear forwards var(--drawing_duration);
 }
 
 .home-path.board {
@@ -45,27 +49,27 @@
 	stroke-width: 5;
 	stroke-dasharray: 323; /* predtym 8969 */
 	stroke-dashoffset: 323; /* predtym 8969 */
-	animation: drawSvg 1s linear forwards 2s, fadeOut .4s linear forwards 3s;
+	animation: drawSvg 1s linear forwards 2s, fadeOut .4s linear forwards var(--drawing_duration);
 }
 
 .home-path.right-eye {
 	stroke-width: 5;
 	stroke-dasharray: 278.5; /* predtym 8969 */
 	stroke-dashoffset: 278.5; /* predtym 8969 */
-	animation: drawSvg 1s linear forwards 2s, fadeOut .4s linear forwards 3s;
+	animation: drawSvg 1s linear forwards 2s, fadeOut .4s linear forwards var(--drawing_duration);
 }
 
 #complete {
 	opacity: 0;
-	animation: fadeIn .4s linear forwards 3s, breathe 2s linear infinite;
+	animation: fadeIn .4s linear forwards var(--drawing_duration), breathe 2s linear infinite;
 }
 
 #closed-mouth {
-	animation: fadeInAndOut 2s linear forwards 3s, breathe 2s linear infinite;
+	animation: fadeInAndOut 2s linear forwards var(--drawing_duration), breathe 2s linear infinite;
 }
 
 #smile {
-	animation: fadeIn .1s linear forwards 5s, breathe 2s linear infinite;
+	animation: fadeIn .1s linear forwards var(--show_smile), breathe 2s linear infinite;
 }
 
 .header-title {
