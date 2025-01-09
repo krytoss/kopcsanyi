@@ -5,14 +5,19 @@
 }
 
 #home-svg,
-#complete,
 #closed-mouth,
 #smile,
-.clipped {
+.clipped,
+#home-complete {
 	max-width: 50vw;
 	max-height: 70vh;
 	top: 10vh;
 	z-index: 10;
+}
+
+#home-complete image {
+	width: 100%;
+	height: 100%;
 }
 
 .home-path {
@@ -23,6 +28,15 @@
 	stroke-width: 4;
 	animation: drawSvg var(--drawing_duration) linear forwards,
 				fadeOut .4s linear forwards var(--drawing_duration);
+}
+
+.home-path.rubber {
+	clip-path: url(#customClip);
+	fill-opacity: 0;
+	stroke-width: 100;
+	stroke-dasharray: 12400; /* predtym 8969 */
+	stroke-dashoffset: 0; /* predtym 8969 */
+	animation: none;
 }
 
 .home-path.board {
@@ -59,9 +73,30 @@
 	animation: drawSvg 1s linear forwards 2s, fadeOut .4s linear forwards var(--drawing_duration);
 }
 
-#complete {
+#home-complete {
 	opacity: 0;
 	animation: fadeIn .4s linear forwards var(--drawing_duration), breathe 2s linear infinite;
+	clip-path: url(#homeClip);
+}
+
+#stroke {
+	width: 50px;
+}
+
+#rubber {
+    fill: none;
+    stroke: white;
+    stroke-width: 300;
+    stroke-dasharray: 12400;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 2s linear;
+	animation: rubber linear forwards;
+	animation-timeline: view();
+	animation-range: cover;
+}
+image#comp {
+    mask: url(#stroke);
+	mask-size: 1%;
 }
 
 #closed-mouth {
@@ -79,19 +114,19 @@
 
 @keyframes breathe {
 	0% {
-		transform: translateX(-50%) translateY(0px) scale(1.0025)
+		transform: translateX(-50%) translateY(0px)
 	}
 	25% {
-		transform: translateX(-50%) translateY(-2px)  scale(1.005)
+		transform: translateX(-50%) translateY(-2px)
 	}
 	50% {
-		transform: translateX(-50%) translateY(0px) scale(1.0025)
+		transform: translateX(-50%) translateY(0px)
 	}
 	75% {
-		transform: translateX(-50%) translateY(2px) scale(1)
+		transform: translateX(-50%) translateY(2px)
 	}
 	100% {
-		transform: translateX(-50%) translateY(0) scale(1.0025)
+		transform: translateX(-50%) translateY(0)
 	}
 }
 
