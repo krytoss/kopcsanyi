@@ -12,9 +12,10 @@ const Menu = () => {
     { link: 'contact', title: 'Kontakt', bg: 'bg-blue-300 hover:bg-blue-400' },
   ];
 
-  const scrollIn = (e) => {
+  const scrollIn = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    const target = e.currentTarget.getAttribute('href').replace('#', '');
+    const target = e.currentTarget?.getAttribute('href')?.replace('#', '');
+	if (!target) return;
     const section = document.getElementById(target);
 
     section?.scrollIntoView({ behavior: 'smooth' });
