@@ -1,7 +1,5 @@
 name: build-and-deploy
 on: push
-env:
-  REACT_APP_GOOGLE_API: ${{ secrets.GOOGLE_API }}
 jobs:
     build:
         runs-on: ubuntu-latest
